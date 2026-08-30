@@ -1,0 +1,192 @@
+# NexusVice configuration
+#
+# Every substance/alcohol display-name below is exactly what players see
+# in item names and chat messages. Change any of them and reload (or
+# restart) -- nothing in the plugin's code needs to change. The internal
+# keys (fentinoli, xanaxel, etc.) are just lookup keys, not shown to
+# players anywhere.
+
+tick-interval-seconds: 5
+decay-per-tick: 3.0
+
+vomit:
+  severe-chance: 0.3
+  overdose-chance: 1.0
+  cooldown-seconds: 30
+  # small chunks flying out on a vomit trigger -- weighted list, duplicates make an entry more
+  # common (three DIRT to one ROTTEN_FLESH here means it's dirt about 3/4 of the time)
+  blocks: [DIRT, DIRT, DIRT, ROTTEN_FLESH]
+
+blackout:
+  alcohol-threshold: 90.0
+  damage-per-pulse: 2.0
+  pulse-interval-seconds: 5
+
+combo:
+  # depressant substances taken alongside alcohol accelerate faster than either alone
+  depressant-alcohol-bonus-multiplier: 1.5
+
+rehab:
+  cooldown-hours: 24
+
+substances:
+  fentinoli:
+    display-name: "Fentinoli"
+    dose-per-item: 40
+    overdose-threshold: 55
+    has-overdose-risk: true
+  xanaxel:
+    display-name: "Xanaxel"
+    dose-per-item: 30
+    overdose-threshold: 80
+    has-overdose-risk: true
+  opiatrix:
+    display-name: "Opiatrix"
+    dose-per-item: 35
+    overdose-threshold: 65
+    has-overdose-risk: true
+  molotine:
+    display-name: "Molotine"
+    dose-per-item: 30
+    overdose-threshold: 90
+    has-overdose-risk: false
+  cocainium:
+    display-name: "Cocainium"
+    dose-per-item: 35
+    overdose-threshold: 100
+    has-overdose-risk: false
+  mollyq:
+    display-name: "Molly-Q"
+    dose-per-item: 30
+    overdose-threshold: 100
+    has-overdose-risk: false
+  acidrop:
+    display-name: "Acidrop"
+    dose-per-item: 25
+    overdose-threshold: 999999
+    has-overdose-risk: false
+  herbalis:
+    display-name: "Herbalis"
+    dose-per-item: 15
+    overdose-threshold: 200
+    has-overdose-risk: false
+  nicotane:
+    display-name: "Nicotane"
+    dose-per-item: 8
+    overdose-threshold: 300
+    has-overdose-risk: false
+  caffinex:
+    display-name: "Caffinex"
+    dose-per-item: 6
+    overdose-threshold: 400
+    has-overdose-risk: false
+  cryotine:
+    display-name: "Cryotine"
+    dose-per-item: 45
+    overdose-threshold: 70
+    has-overdose-risk: true
+  sporeline:
+    display-name: "Sporeline"
+    dose-per-item: 25
+    overdose-threshold: 999999
+    has-overdose-risk: false
+  ketrazine:
+    display-name: "Ketrazine"
+    dose-per-item: 35
+    overdose-threshold: 75
+    has-overdose-risk: true
+  anabolex:
+    display-name: "Anabolex"
+    dose-per-item: 30
+    overdose-threshold: 120
+    has-overdose-risk: false
+  driftweed:
+    display-name: "Driftweed"
+    dose-per-item: 15
+    overdose-threshold: 220
+    has-overdose-risk: false
+  somnara:
+    display-name: "Somnara"
+    dose-per-item: 35
+    overdose-threshold: 80
+    has-overdose-risk: true
+  titanex:
+    display-name: "Titanex"
+    dose-per-item: 35
+    overdose-threshold: 130
+    has-overdose-risk: false
+  euphorion:
+    display-name: "Euphorion"
+    dose-per-item: 25
+    overdose-threshold: 999999
+    has-overdose-risk: false
+  blissenta:
+    display-name: "Blissenta"
+    dose-per-item: 20
+    overdose-threshold: 999999
+    has-overdose-risk: false
+  rapturine:
+    display-name: "Rapturine"
+    dose-per-item: 35
+    overdose-threshold: 85
+    has-overdose-risk: true
+  morphene:
+    display-name: "Morphene"
+    dose-per-item: 38
+    overdose-threshold: 60
+    has-overdose-risk: true
+  crankstone:
+    display-name: "Crankstone"
+    dose-per-item: 40
+    overdose-threshold: 65
+    has-overdose-risk: true
+  riftsmoke:
+    display-name: "Riftsmoke"
+    dose-per-item: 25
+    overdose-threshold: 999999
+    has-overdose-risk: false
+  voidcap:
+    display-name: "Voidcap"
+    dose-per-item: 38
+    overdose-threshold: 70
+    has-overdose-risk: true
+  gummel:
+    display-name: "Gummel"
+    dose-per-item: 15
+    overdose-threshold: 210
+    has-overdose-risk: false
+
+alcohol:
+  beer:
+    display-name: "Beer"
+    dose-per-item: 8
+  wine:
+    display-name: "Wine"
+    dose-per-item: 18
+  liquor:
+    display-name: "Liquor"
+    dose-per-item: 35
+
+# Specific drinkable products. Each one maps back to a base type above (same shared alcohol
+# pool/effect curve either way) -- quality only scales how strong one drink of it is. Override
+# dose-per-item here per-brand if you want a brand to break from its quality tier's default
+# multiplier (bottom-shelf x0.75, standard x1.0, top-shelf x1.4 of the base type's dose-per-item).
+alcohol-brands:
+  rustbucket_lager:
+    display-name: "Rustbucket Lager"
+  hopfield_ale:
+    display-name: "Hopfield Ale"
+  ironcrest_stout:
+    display-name: "Ironcrest Stout"
+  cellar_jug_red:
+    display-name: "Cellar Jug Red"
+  highvale_merlot:
+    display-name: "Highvale Merlot"
+  estate_reserve:
+    display-name: "Estate Reserve"
+  moonshine_jar:
+    display-name: "Moonshine Jar"
+  blackrock_whiskey:
+    display-name: "Blackrock Whiskey"
+  gilded_reserve:
+    display-name: "Gilded Reserve"
